@@ -1,0 +1,153 @@
+//Fuel Cell Code
+//Date: October,2015
+//By:Dhrumilkumar Parikh
+
+#include "UW_GENE_121.h"
+
+void main(void)
+{   
+    initialize();
+    wait1Msec(200);
+//    int a=9000;//Check sensors values for debugger 
+//    int b=9000;
+//    while (a<9005 && b<9005)
+//    {
+//      a=getSensor(REFLECT_1);
+//      b=getSensor(REFLECT_2);
+//    }
+
+    
+///////////////////////////////////////COURSE A END 1/////////////////////////////////////
+    while(getSensor(BUTTON) == 0)
+    {
+       setMotor(MOTOR_A,0);
+       setMotor(MOTOR_B,0);
+    }
+    while(getSensor(BUTTON) == 1)
+    {}
+ 
+  while(getSensor(BUTTON) == 0 ||  getSensor(BUTTON) !=1)//Line Follow
+    {
+      if (getSensor(REFLECT_1)>100 && getSensor(REFLECT_2)<200)//straight 
+      {
+         setMotor(MOTOR_A,-40);
+         setMotor(MOTOR_B,40);
+      }
+      if (getSensor(REFLECT_1)>100 && getSensor(REFLECT_2)<100)//right  
+      {
+         setMotor(MOTOR_A,30);
+         setMotor(MOTOR_B,30);
+      }
+       if (getSensor(REFLECT_1)<100 && getSensor(REFLECT_2)>200)//left 
+      {
+         setMotor(MOTOR_A,-30);
+         setMotor(MOTOR_B,-30);
+         wait1Msec(300);
+      }
+    }
+    setMotor(MOTOR_A,0);
+    setMotor(MOTOR_B,0);
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#include "UW_GENE_121.h"
+
+void main(void)
+{   
+    initialize();
+    wait1Msec(200);  
+///////////////////////////////////////COURSE B END 4///////////////////////////////////////
+    while(getSensor(BUTTON) == 0)
+    {
+       setMotor(MOTOR_A,0);
+       setMotor(MOTOR_B,0);
+    }
+    while(getSensor(BUTTON) == 1)
+    {}
+ 
+  while(getSensor(BUTTON) == 0 ||  getSensor(BUTTON) !=1)//Line Follow
+    {
+      if (getSensor(REFLECT_1)>100 && getSensor(REFLECT_2)<200)//straight 
+      {
+         setMotor(MOTOR_A,-40);
+         setMotor(MOTOR_B,40);
+      }
+      if (getSensor(REFLECT_1)>100 && getSensor(REFLECT_2)<100)//right  
+      {
+         setMotor(MOTOR_A,30);
+         setMotor(MOTOR_B,30);
+      }
+       if (getSensor(REFLECT_1)<100 && getSensor(REFLECT_2)>200)//left 
+      {
+         setMotor(MOTOR_A,-30);
+         setMotor(MOTOR_B,-30);
+         wait1Msec(300);
+      }
+       if (getSensor(REFLECT_2)<100)//right  
+      {
+         setMotor(MOTOR_A,30);
+         setMotor(MOTOR_B,30);
+      }
+       if (getSensor(REFLECT_1)<100 && getSensor(REFLECT_2)<100)//right  
+      {
+         setMotor(MOTOR_A,30);
+         setMotor(MOTOR_B,30);
+      }
+    }
+    setMotor(MOTOR_A,0);
+    setMotor(MOTOR_B,0);
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
+#include "UW_GENE_121.h"
+void main(void)
+{   
+    initialize();
+    wait1Msec(200);    
+////////////////////////////////////////COURSE C END 1/line follow//////////////////////////////////////
+    wait1Msec(2000);
+    if (getSensor(BUTTON) == 0)
+    {
+    setMotor(MOTOR_A,-50);//Straight 
+    setMotor(MOTOR_B,50);
+    
+    wait1Msec(2500);
+    
+    setMotor(MOTOR_A,-50);//Left
+    setMotor(MOTOR_B,-50);
+    
+    wait1Msec(700);//Time Based on Trial and error
+    
+    setMotor(MOTOR_A,-50);//Straight 
+    setMotor(MOTOR_B,50);
+    }
+    setMotor(MOTOR_A,0);
+    setMotor(MOTOR_B,0);
+
+    wait1Msec(1000);
+    while(getSensor(BUTTON) == 0 ||  getSensor(BUTTON) !=1)//Line Follow
+    {
+      if (getSensor(REFLECT_1)>100 && getSensor(REFLECT_2)<200)//straight 
+      {
+         setMotor(MOTOR_A,-40);
+         setMotor(MOTOR_B,40);
+      }
+      if (getSensor(REFLECT_1)>100 && getSensor(REFLECT_2)<100)//right  
+      {
+         setMotor(MOTOR_A,30);
+         setMotor(MOTOR_B,30);
+      }
+       if (getSensor(REFLECT_1)<100 && getSensor(REFLECT_2)>200)//left 
+      {
+         setMotor(MOTOR_A,-30);
+         setMotor(MOTOR_B,-30);
+         wait1Msec(300);
+      }
+    }
+    setMotor(MOTOR_A,0);
+    setMotor(MOTOR_B,0);
+
+}
+
+
+
+  
+ 
